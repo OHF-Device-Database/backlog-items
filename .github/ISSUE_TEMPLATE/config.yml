@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discussions
+    url: https://github.com/orgs/OHF-Device-Database/discussions
+    about: Ideas, proposals and questions that are not yet backlog items
+  - name: OHF Roadmap
+    url: https://github.com/OpenHomeFoundation/roadmap/issues
+    about: Opportunities at the OHF roadmap level
