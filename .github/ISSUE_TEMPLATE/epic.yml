@@ -1,0 +1,76 @@
+name: Epic
+description: A Device Database epic, structured like an OHF roadmap opportunity
+title: "[Epic] "
+type: Epic
+projects: ["OHF-Device-Database/1"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Epics follow the same structure as OHF roadmap opportunities. Keep the problem and scope sharp; detail goes into the linked feature issues. Reference the roadmap opportunity this epic belongs to in the Problem statement.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What is broken or missing, for whom, and why it matters now. Link the related OHF roadmap opportunity.
+    validations:
+      required: true
+
+  - type: textarea
+    id: signals
+    attributes:
+      label: Community signals
+      description: Discussions, Discord threads, survey results, prototypes or requests that show demand. Links preferred.
+    validations:
+      required: true
+
+  - type: textarea
+    id: in-scope
+    attributes:
+      label: Scope & Boundaries — In scope
+      description: What this epic delivers.
+    validations:
+      required: true
+
+  - type: textarea
+    id: not-in-scope
+    attributes:
+      label: Scope & Boundaries — Not in scope
+      description: What is explicitly excluded, and where it lives instead (other epic, follow-up opportunity).
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Foreseen solution
+      description: The intended approach at a level that lets features be derived. Link proposals, design prototypes and technical docs.
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks & open questions
+      description: Known risks, dependencies and decisions still to be taken.
+
+  - type: textarea
+    id: appetite
+    attributes:
+      label: Appetite
+      description: How much time and effort this is worth, and the target window (quarters are targets, not commitments).
+
+  - type: textarea
+    id: execution
+    attributes:
+      label: Execution issues
+      description: Feature issues under this epic, existing or to be created. Also add them as sub-issues.
+
+  - type: textarea
+    id: decisions
+    attributes:
+      label: Decision log
+      description: One row per decision. Keep the table header.
+      value: |
+        | Date | Decision | Outcome |
+        |------|----------|---------|
+        |      |          |         |
