@@ -1,5 +1,5 @@
 name: Epic
-description: A Device Database epic, structured like an OHF roadmap opportunity
+description: An engineering epic that delivers against a roadmap opportunity or goal
 title: "[Epic] "
 type: Epic
 projects: ["OHF-Device-Database/1"]
@@ -7,70 +7,74 @@ body:
   - type: markdown
     attributes:
       value: |
-        Epics follow the same structure as OHF roadmap opportunities. Keep the problem and scope sharp; detail goes into the linked feature issues. Reference the roadmap opportunity this epic belongs to in the Problem statement.
+        An epic is the engineering slice of a roadmap item. The user problem, community signals, product-level solution and appetite live in the roadmap opportunity; this epic holds what the team will build, how, and when it is done.
 
   - type: textarea
-    id: problem
+    id: parent
     attributes:
-      label: Problem statement
-      description: What is broken or missing, for whom, and why it matters now. Link the related OHF roadmap opportunity.
+      label: Parent
+      description: >-
+        The roadmap item this epic delivers against, highest level that applies.
+        An opportunity (OpenHomeFoundation/roadmap#NNN) plus one sentence naming which slice of it this epic covers;
+        one opportunity can fan out to several epics, say which one this is.
+        No opportunity? Link the goal or sub-goal instead, plus one line on why the work exists
+        (maintenance, spec bump, blocker tracking). That is normal; do not invent an opportunity to fill the field.
+        Set the same link as the GitHub parent issue so the hierarchy shows on the board.
+      placeholder: "OpenHomeFoundation/roadmap#87, Lane A: contribution mechanism on the starter fields"
     validations:
       required: true
 
   - type: textarea
-    id: signals
+    id: technical-context
     attributes:
-      label: Community signals
-      description: Discussions, Discord threads, survey results, prototypes or requests that show demand. Links preferred.
+      label: Technical context
+      description: >-
+        What in the stack this touches: spec versions, libraries, upstream SDKs, certification.
+        3 to 6 lines. Do not restate the user problem.
     validations:
       required: true
 
   - type: textarea
-    id: in-scope
+    id: approach
     attributes:
-      label: Scope & Boundaries — In scope
-      description: What this epic delivers.
+      label: Approach
+      description: >-
+        Engineering decisions and constraints only. Product-level solution stays in the opportunity.
+        If you diverge from the opportunity's foreseen solution, say so here and add a row to the opportunity's decision log.
     validations:
       required: true
 
   - type: textarea
-    id: not-in-scope
+    id: deliverables
     attributes:
-      label: Scope & Boundaries — Not in scope
-      description: What is explicitly excluded, and where it lives instead (other epic, follow-up opportunity).
-    validations:
-      required: true
-
-  - type: textarea
-    id: solution
-    attributes:
-      label: Foreseen solution
-      description: The intended approach at a level that lets features be derived. Link proposals, design prototypes and technical docs.
-
-  - type: textarea
-    id: risks
-    attributes:
-      label: Risks & open questions
-      description: Known risks, dependencies and decisions still to be taken.
-
-  - type: textarea
-    id: appetite
-    attributes:
-      label: Appetite
-      description: How much time and effort this is worth, and the target window (quarters are targets, not commitments).
-
-  - type: textarea
-    id: execution
-    attributes:
-      label: Execution issues
-      description: Feature issues under this epic, existing or to be created. Also add them as sub-issues.
-
-  - type: textarea
-    id: decisions
-    attributes:
-      label: Decision log
-      description: One row per decision. Keep the table header.
+      label: Deliverables
+      description: >-
+        Checklist of what ships in THIS epic: releases, PRs, docs, tests. Link each once it exists.
+        Work that belongs to another epic goes in a follow-up link under Risks & dependencies, not here.
       value: |
-        | Date | Decision | Outcome |
-        |------|----------|---------|
-        |      |          |         |
+        - [ ] 
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+
+  - type: textarea
+    id: completion-criteria
+    attributes:
+      label: Completion criteria
+      description: >-
+        Observable and testable: device behaviour, test state, closed issues. Not "X works".
+        An outcome the team cannot force (ranking, adoption) gets a baseline and a time box, otherwise the epic never closes.
+      value: |
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks-dependencies
+    attributes:
+      label: Risks & dependencies
+      description: >-
+        Specific to this epic: upstream timing, firmware maturity, decisions owned elsewhere, follow-up epics this spawns.
+        Product-level risks stay in the opportunity.
