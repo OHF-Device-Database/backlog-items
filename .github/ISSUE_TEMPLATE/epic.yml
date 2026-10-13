@@ -1,6 +1,6 @@
 name: Epic
 description: An engineering epic that delivers against a roadmap opportunity or goal
-title: " "
+title: "Your title..."
 type: Epic
 projects: ["OHF-Device-Database/1"]
 body:
